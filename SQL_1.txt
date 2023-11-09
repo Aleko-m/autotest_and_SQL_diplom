@@ -1,0 +1,6 @@
+Select c.login, COUNT(o."inDelivery") AS Summa 
+From "Couriers" AS c 
+INNER JOIN "Orders" AS o 
+ON c.id=o."courierId" 
+WHERE o."inDelivery"='true' 
+GROUP BY c.login;
